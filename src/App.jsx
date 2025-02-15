@@ -80,11 +80,22 @@ function App() {
           <div className="camera-container">
             {photoCount < 4 && (
               <Webcam
-                audio={false}
-                ref={webcamRef}
-                screenshotFormat="image/png"
-                width="100%"
-              />
+              audio={false}
+              ref={webcamRef}
+              screenshotFormat="image/png"
+              videoConstraints={{
+                facingMode: "user", // Change to "environment" for rear camera
+                width: 1280,
+                height: 720
+              }}
+              mirrored={true} // Fixes the mirroring issue
+              style={{
+                width: "100%",
+                maxWidth: "640px", // Ensure good size on mobile
+                height: "auto",
+                borderRadius: "10px" // Force landscape mode
+              }}
+            />
             )}
             {countdown > 0 && <div className="countdown">{countdown}</div>}
             {flash && <div className="flash-effect"></div>}

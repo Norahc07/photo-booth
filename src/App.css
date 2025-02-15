@@ -35,7 +35,7 @@
 .camera-container {
   position: relative;
   width: 100%;
-  max-width: 400px; /* Ensures camera fits */
+  max-width: 640px; /* Ensures camera fits */
   overflow: hidden;
 }
 
