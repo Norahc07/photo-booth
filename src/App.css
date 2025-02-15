@@ -1,4 +1,4 @@
-/* Basic styles */
+/* General App Styling */
 .App {
   text-align: center;
   padding: 20px;
@@ -8,30 +8,44 @@
   height: 100vh;
   background-color: #fff9f9;
   flex-direction: column;
+  width: 100%;
 }
 
+/* Instruction Container */
 .instructions {
   margin: 0 auto;
   max-width: 400px;
 }
 
+/* Photo Booth Main Container */
 .photo-booth {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Camera Styling */
 .camera-container {
   position: relative;
+  width: 100%;
+  max-width: 400px; /* Ensures camera fits */
+  overflow: hidden;
 }
 
+.camera-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Countdown Timer */
 .camera-container .countdown {
   position: absolute;
   top: 10px;
@@ -42,6 +56,7 @@
   padding: 10px;
 }
 
+/* Flash Effect */
 .camera-container .flash-effect {
   position: fixed;
   top: 0;
@@ -73,30 +88,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
+  width: 100%;
+  max-width: 350px;
   padding: 20px;
   box-sizing: border-box;
   background-color: white;
   position: relative;
+  border-radius: 10px;
 }
 
+/* Captured Photos */
 .photo-item {
-  width: 220px;
-  height: 150px;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 10px;
   background: white;
   border-radius: 10px;
 }
 
+/* Frame Text */
 .frame-text {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: black;
   padding: 5px 15px;
   margin-top: 10px;
 }
 
-/* Frame selection */
+/* Frame Selection */
 .frame-selection {
   margin-top: 20px;
 }
@@ -123,10 +143,14 @@ button {
   margin: 5px;
 }
 
-/* Mobile responsiveness */
+/* 🔹 Mobile Optimization */
 @media (max-width: 768px) {
   .photo-booth {
     padding: 15px;
+    max-width: 100%;
+  }
+
+  .camera-container {
     max-width: 100%;
   }
 
@@ -135,6 +159,15 @@ button {
   }
 
   .photo-item {
-    height: 100px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .frame-text {
+    font-size: 18px;
+  }
+
+  .color-options {
+    flex-wrap: wrap;
   }
 }
